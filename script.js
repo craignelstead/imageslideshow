@@ -13,8 +13,14 @@ let currentIndex = 0;
 function changeImage (){
     let slideshow = document.getElementById('slideshow');
 
-    currentIndex = (currentIndex + 1) % images.length; //Increment by 1, then loop back to start
-    slideshow.src = `./images/${images[currentIndex]}`;
+    slideshow.style.opacity = 0; //Fade out
+
+    setTimeout(() => {
+        currentIndex = (currentIndex + 1) % images.length; //Increment by 1, then loop back to start
+        slideshow.src = `./images/${images[currentIndex]}`;
+
+        slideshow.style.opacity = 1; //Fade in
+    }, 500);
 
     //Check time to see if screen should be black or show content
     determineDisplayStatus(slideshow);

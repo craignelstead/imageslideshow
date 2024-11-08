@@ -17,4 +17,7 @@ body {
     width: 100vw;
     height: 100vh;
     object-fit: cover;
+
+    transition: opacity .5s ease-in-out; /* Fade transition */
+    opacity: 1; /* Default to fully visible */
 }
